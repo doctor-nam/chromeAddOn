@@ -1,0 +1,22 @@
+.post-body.entry-content a {}
+
+/*.wrap.list {display:none; position:fixed; top:9999px; left:9999px; opacity: 0; padding:0; margin:0; z-index: -10000;}*/
+.btn-mp4-play {position:fixed; z-index:99999999999999999999999999999999999999999999999; top:20px; right:20px; width:100px; height:100px; line-height: 100px; border-radius: 50%; text-align: center; background-color: #fff; color:#333; font-size: 16px;}
+
+/* 옥수수 */
+.btn-oksusu-zoom {width:30px; height:30px; line-height:30px; text-align:center; position:fixed; z-index:1000; top:20px; right:20px; background-color:#fff; border-radius:50%; color:#333; box-shadow:0 10px 10px rgba(0, 0, 0, 0.35);}
+
+#header .header_bottom,
+.video_wrap.ver02 .video_right_list {transition: .5s;}
+
+#header .header_bottom {position:relative; z-index:-1;}
+
+body.oksusu-zoom #header .header_bottom {margin-top:-70px;}
+body.oksusu-zoom .video_wrap.ver02 .video_right_list {right:-100%;}
+
+body.oksusu-zoom .video-default {width:1200px;}
+body.oksusu-zoom .video-default .video-default-bg,
+body.oksusu-zoom .video-default .video-js {width:100%; height:600px;}
+
+/* 유튜브 */
+.btn-hide-bar {margin-top: 13px; margin-right: 12px; color: #000;}

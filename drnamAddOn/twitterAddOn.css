@@ -1,0 +1,33 @@
+/* Twitter edgeicons
+https://edge-icons.herokuapp.com/ */
+
+.AdaptiveMedia-photoContainer + .btn,
+.PlayableMedia-reactWrapper + .btn,
+.Gallery-content > .btn,
+.btn-img-download {
+    position: absolute; top: 12px; right:12px; z-index: 9999;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    padding: 0;
+    border-radius: 50%;
+    opacity: 0;
+    text-align: center;
+    background-image: none;
+    transition: .15s;
+    background-color: #fff;
+    color:#222;
+    text-decoration: none;
+}
+.Gallery-content > .btn,
+.btn-img-download {opacity: 1; z-index: 9999;}
+.AdaptiveMedia-photoContainer:hover + .btn,
+.AdaptiveMedia-photoContainer + .btn:hover,
+.PlayableMedia-reactWrapper:hover + .btn,
+.PlayableMedia-reactWrapper + .btn:hover,
+.Gallery-content > .btn:hover,
+.btn-img-download:hover {box-shadow:none; opacity: .9;}
+.AdaptiveMedia-photoContainer + .btn::before,
+.PlayableMedia-reactWrapper + .btn::before,
+.Gallery-content > .btn::before,
+.btn-img-download:before {content:"\f002"; font-family:"FontAwesome"; font-size: 12px; /*position: absolute; top:50%; left:50%; transform:translate(-50%, -50%) rotate(180deg);*/}

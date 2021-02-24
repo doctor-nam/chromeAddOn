@@ -1,0 +1,46 @@
+{
+	"manifest_version": 2,
+	"name": "drnamAddOn",
+	"description": "My first Chrome Extension.",
+	"version": "0.1",
+	"icons": {
+		"16": "twitterAddOn-16.png", "128": "twitterAddOn-128.png"
+	},
+	"browser_action": {
+		"default_icon": "twitterAddOn-16.png",
+		"default_popup": "window.html"
+	},
+	"background": {
+		"scripts": ["jquery-3.3.1.js", "background.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.twitter.com/*"],
+			"css": ["twitterAddOn.css"],
+			"js": ["jquery-3.3.1.js", "twitterAddOn.js"]
+		},
+		{
+			"matches": ["*://jpop80ss.blogspot.com/*", "*://ouo.io/*", "*://shon.xyz/*", "*://sh.st/*", "*://*.oksusu.com/*", "*://javfreefull.stream/*", "*://idolpixels.net/*", "*://*.winktv.co.kr/*", "*://*.instagram.com/*", "*://*.lpcd.co.kr/*", "*://smartstore.naver.com/*"],
+			"css": ["drnamAddOn.css"],
+			"js": ["jquery-3.3.1.js", "drnamAddOn.js"]
+		},
+		{
+			"matches": ["*://*.kims.co.kr/*"],
+			"js": ["jquery-3.3.1.js", "drnamAddOn.js"]
+		},
+		{
+			"matches": ["*://*.youtube.com/*"],
+			"css": ["drnamAddOn.css"],
+			"js": ["jquery-3.3.1.js", "drnamAddOn.js"]
+		}
+	],
+	"permissions": [
+		"*://*.twitter.com/*",
+		"tabs",
+		"webNavigation"
+	],
+	"web_accessible_resources": [
+	    "favicon-daum.ico"
+	]
+}
