@@ -122,6 +122,10 @@ $(function() {
     }
 });
 
+$(window).on('hashchange', function(e){
+    console.log('changed?');
+});
+
 $(window).on("load", function() {
     addTargetBlank();
 });
