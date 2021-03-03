@@ -55,13 +55,21 @@ $(function() {
     if (url.indexOf('http://lpcd.co.kr/') != -1) {
         $('style + table').find('td').each(function() {
             var src = $(this).find('.sell_price + img').attr('src');
-            console.log(typeof src);
             if (typeof src != 'undefined') {
                 if (src.indexOf('icon_product0.gif') != -1) {
                     $(this).css('opacity', '0.1');
                 }
             }
         });
+
+        var pgNo = $.getUrlVar('pageno');
+        $('a[href*=catalog]').each(function(){
+            var html = $(this).html();
+            if (html == pgNo) {
+                $(this).css({'font-weight':'bold','color' : '#ff0000'});
+            }
+        });
+
     }
 
     if (url.indexOf('smartstore.naver.com') != -1) {
@@ -154,3 +162,20 @@ function winOpen(url)
 /* stream */
 function removeStreamElem() {
 }
+
+// 파라미터 추출
+$.extend({
+    getUrlVars: function(){
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    },
+    getUrlVar: function(name) {
+        return $.getUrlVars()[name];
+    }
+});
