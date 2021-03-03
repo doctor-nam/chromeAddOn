@@ -73,13 +73,10 @@ $(function() {
     }
 
     if (url.indexOf('smartstore.naver.com') != -1) {
-        $('#content > div > ul > li').each(function() {
-            var html = $(this).find('.text').html();
-            if (typeof html != 'undefined') {
-                if (html.indexOf('품절') != -1) {
-                    $(this).css({'position':'fixed', 'top':'-9999px', 'left':'-9999px'});
-                }
-            }
+        hideSoldOut();
+
+        $('li[role=presentation] > button, a[role=menuitem]').click(function() {
+            hideSoldOut();
         });
     }
 
@@ -179,3 +176,16 @@ $.extend({
         return $.getUrlVars()[name];
     }
 });
+
+// 네이버 스마트스토어 품절 숨김
+function hideSoldOut() {
+    $('#content > div > ul > li').each(function() {
+        $(this).removeAttr('style');
+        var html = $(this).find('.text').html();
+        if (typeof html != 'undefined') {
+            if (html.indexOf('품절') != -1) {
+                $(this).css({'position':'fixed', 'top':'-9999px', 'left':'-9999px'});
+            }
+        }
+    });
+}
