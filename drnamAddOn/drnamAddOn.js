@@ -52,15 +52,17 @@ $(function() {
 		});
     }
 
-    if (url.indexOf('http://lpcd.co.kr/') != -1) {
+    if (url.indexOf('lpcd.co.kr/') != -1) {
         $('style + table').find('td').each(function() {
             var src = $(this).find('.sell_price + img').attr('src');
             if (typeof src != 'undefined') {
                 if (src.indexOf('icon_product0.gif') != -1) {
-                    $(this).css('opacity', '0.1');
+                    $(this).css({'opacity': '0.1', 'transition': 1000});
                 }
             }
         });
+
+        console.log('lpcd');
 
         var pgNo = $.getUrlVar('pageno');
         $('a[href*=catalog]').each(function(){
@@ -69,7 +71,6 @@ $(function() {
                 $(this).css({'font-weight':'bold','color' : '#ff0000'});
             }
         });
-
     }
 
     if (url.indexOf('smartstore.naver.com') != -1) {
