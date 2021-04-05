@@ -53,16 +53,19 @@ $(function() {
     }
 
     if (url.indexOf('lpcd.co.kr/') != -1) {
+        $('body').addClass('lpcd');
+        $('style + table').addClass('list-table');
+        if ($('.list-table').find('form[name=myform]').length != 0) {
+            $('.list-table').removeClass('list-table');
+        }
         $('style + table').find('td').each(function() {
             var src = $(this).find('.sell_price + img').attr('src');
             if (typeof src != 'undefined') {
                 if (src.indexOf('icon_product0.gif') != -1) {
-                    $(this).css({'opacity': '0.1', 'transition': 1000});
+                    $(this).css({'opacity': '0.1', 'transition': 1000, 'position':'fixed', 'top': -9999, 'left': -9999});
                 }
             }
         });
-
-        console.log('lpcd');
 
         var pgNo = $.getUrlVar('pageno');
         $('a[href*=catalog]').each(function(){
