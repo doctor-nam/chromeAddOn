@@ -21,7 +21,7 @@
 			"js": ["jquery-3.3.1.js", "twitterAddOn.js"]
 		},
 		{
-			"matches": ["*://jpop80ss.blogspot.com/*", "*://ouo.io/*", "*://shon.xyz/*", "*://sh.st/*", "*://*.oksusu.com/*", "*://javfreefull.stream/*", "*://idolpixels.net/*", "*://*.winktv.co.kr/*", "*://*.instagram.com/*", "*://*.lpcd.co.kr/*", "*://smartstore.naver.com/*"],
+			"matches": ["*://jpop80ss.blogspot.com/*", "*://ouo.io/*", "*://shon.xyz/*", "*://sh.st/*", "*://*.oksusu.com/*", "*://javfreefull.stream/*", "*://idolpixels.net/*", "*://*.winktv.co.kr/*", "*://*.instagram.com/*", "*://*.lpcd.co.kr/*", "*://smartstore.naver.com/*", "*://*.japanbid.co.kr/*"],
 			"css": ["drnamAddOn.css"],
 			"js": ["jquery-3.3.1.js", "drnamAddOn.js"]
 		},

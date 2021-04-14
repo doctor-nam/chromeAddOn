@@ -52,6 +52,16 @@ $(function() {
 		});
     }
 
+    if (url.indexOf('japanbid.co.kr') != -1) {//재팬비드
+        var prependUrl = 'https://www.japanbid.co.kr/yahoo/bid.s/';
+        $('.subject.DicoLink[rel=noreferrer]').each(function() {
+            var url = $(this).attr('href');
+            var newUrl = prependUrl + url;
+            console.log(newUrl);
+            $(this).prop('href', newUrl);
+        });
+    }
+
     if (url.indexOf('lpcd.co.kr/') != -1) {
         $('body').addClass('lpcd');
         $('style + table').addClass('list-table');
