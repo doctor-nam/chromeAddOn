@@ -25,6 +25,7 @@ $(function() {
             $('.ytp-chrome-bottom, .ytp-gradient-bottom').hide();
             return false;
 		});
+        
         $(document).on('click', 'a.btn-hide-bar.active', function() {
             $(this).addClass('normal');
             $(this).removeClass('active');
@@ -86,13 +87,14 @@ $(function() {
         });
     }
 
-    if (url.indexOf('smartstore.naver.com') != -1) {
+    if (url.indexOf('smartstore.naver') != -1) {
         hideSoldOut();
 
-        $('li[role=presentation] > button, a[role=menuitem]').click(function() {
+        $('li[role=presentation] > button, a[role=menuitem], body').click(function() {
             hideSoldOut();
         });
     }
+
 
     if (url.indexOf('//ouo') != -1) {
         $('button.btn-main').removeClass('disabled').css('z-index', 999999999999999999999999999);
