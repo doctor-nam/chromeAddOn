@@ -31,3 +31,4 @@ https://edge-icons.herokuapp.com/ */
 .PlayableMedia-reactWrapper + .btn::before,
 .Gallery-content > .btn::before,
 .btn-img-download:before {content:"\f002"; font-family:"FontAwesome"; font-size: 12px; /*position: absolute; top:50%; left:50%; transform:translate(-50%, -50%) rotate(180deg);*/}
+.btn-delete {position: fixed; top:20px; right:20px; z-index: 100;}

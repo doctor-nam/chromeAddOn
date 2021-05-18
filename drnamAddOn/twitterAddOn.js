@@ -6,6 +6,7 @@ $(function() {
 
     twitterIcoChange();
     twitterTitleChange();
+    addDeleteBtn();
 
     $("title").bind("DOMSubtreeModified", function(){
         twitterTitleChange();
@@ -44,6 +45,7 @@ $(window).on("load", function() {
     createDownload();
     twitterIcoChange();
     twitterTitleChange();
+    addDeleteBtn();
 
     var cnt = $('.people.notifications .new-count .count-inner').html();
     //twitterPush(cnt);
@@ -53,6 +55,7 @@ $(window).on("scroll", function() {
     createDownload();
     twitterIcoChange();
     twitterTitleChange();
+    addDeleteBtn();
 
     var cnt = $('.people.notifications .new-count .count-inner').html();
     //twitterPush(cnt);
@@ -101,6 +104,12 @@ function createDownload() {
             }
         }
     }); */
+
+    // 자동 삭제?
+    $(document).on('click', '.btn-delete', function() {
+        console.log(1);
+        $('div[aria-haspopup=menu]').eq(0).trigger('click');
+    });
 }
 
 function twitterIcoChange() {
@@ -131,5 +140,13 @@ function twitterPush(cnt) { // 알림 설정
         else {
             $('title').html(tiSplit[1]);
         }
+    }
+}
+
+// 자동 삭제?
+function addDeleteBtn() {
+    var btn = '<button type="button" class="btn-delete">트윗삭제</button>'
+    if ($('body > .btn-delete').length == 0) {
+        $('body').append(btn);
     }
 }
